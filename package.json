@@ -12,8 +12,11 @@
   "author": "Kai Wang",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "chalk": "^5.0.1",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
   }

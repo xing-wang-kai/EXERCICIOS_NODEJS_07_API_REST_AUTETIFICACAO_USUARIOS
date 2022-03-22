@@ -16,8 +16,14 @@ const User = db.define('user', {
         type: Sequelize.STRING,
         allowNull: false
     }
+    ,
+    password: {
+        type: Sequelize.STRING,
+        allowNull: true
+    }
 })
 
-//User.sync().then(()=>{console.log('ok')})
+// Cria a tabela e faz alterações na tabela.
+//User.sync({alter: true}).then(()=>{console.log('ok')})
 
 export default User;

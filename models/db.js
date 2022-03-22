@@ -1,16 +1,17 @@
 import Sequelize from 'sequelize';
+import 'dotenv/config';
 
 const sequelize = new Sequelize(
-    "nodejscelk",
-    "root",
-    "hoot",
+    process.env.DB_DATABASE,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
     {
-    host: "localhost",
+    host: process.env.DB_HOST,
     dialect: 'mysql'
 })
 
 sequelize.authenticate()
     .then(()=> console.log('conexão com o banco de dados realizada com sucesso!!'))
-    .catch(()=> console.log('Error: falha ao tentar se conectar ao banco de dados'))
+    .catch((error)=> console.log( `${error.message} - Erro ao se conecetar com o banco de dados`))
 
 export default sequelize;
