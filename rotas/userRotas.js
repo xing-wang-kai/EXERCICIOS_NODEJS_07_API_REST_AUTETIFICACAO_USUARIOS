@@ -11,6 +11,7 @@ router.get('/contatos',validarToken, userController.bucarRegistros)
       .delete('/contatos/:id',validarToken, userController.deletarRegistro)
       .put('/contatos-senha/:id',validarToken, userController.editarSenha)
       .post('/login', userController.login)
+      .get('/val-token', validarToken, userController.valToken)
 
 
 export default router;

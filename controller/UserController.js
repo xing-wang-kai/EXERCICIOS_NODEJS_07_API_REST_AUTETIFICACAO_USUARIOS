@@ -97,6 +97,15 @@ class userController{
         }
         
     }
+    static valToken = async (req, res) => {
+
+        const user = await User.findByPk(req.userId)
+        res.status(200).json({
+            error: false,
+            message: `${req.userId} - Tokem válido`,
+            usuário: user
+        })
+    }
 }
 
 export default userController;
